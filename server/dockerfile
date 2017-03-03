@@ -1,0 +1,8 @@
+FROM node:latest
+MAINTAINER Daniel Ram <danieldram@gmail.com>
+COPY . /var/www
+WORKDIR /var/www
+
+RUN npm install
+EXPOSE 3003
+CMD ["npm", "start"]

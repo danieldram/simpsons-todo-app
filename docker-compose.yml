@@ -1,0 +1,32 @@
+version: '2'
+services:
+
+  mongo:
+    image: mongo
+    command: bash -c "chown -R mongodb:mongodb /data && mongod --dbpath /data/meta --oplogSize 1 --smallfiles --port 3001"
+    ports:
+      - "3001:3001"
+    networks:
+      - app
+    volumes:
+      - '/data/meta:/data/meta'
+
+  dnn-todo-app:
+    build:
+      context: ./server
+      dockerfile: "dockerfile"
+    logging:
+      driver: "json-file"
+      options:
+          max-size: "1000m"
+          max-file: "10"
+    ports:
+        - "3003:3003"
+    restart: "always"
+    networks:
+        - app
+
+
+networks:
+  app:
+    driver: bridge
