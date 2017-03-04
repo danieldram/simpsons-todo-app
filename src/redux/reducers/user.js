@@ -7,8 +7,8 @@ import * as ACT from '../action-types'
 
 /* SET INITIAL STATE OF USER TODOS */
 const InitialState = {
-  username:'Homer Simpson',
-  isLoggedIn:true
+  username:'',
+  isLoggedIn:false
 }
 
 const user = (state=InitialState, {type, username}) => {

@@ -1,12 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export const Header = (props) =>{
-  console.log(props)
+export class Login extends Component {
+  constructor(props){
+    super(props)
+    this.props = props;
+    console.log(props)
+  }
+  render() {
+    return (
+      <div className="login container">
+        <h1>Login Box</h1>
+      </div>
+    );
+  }
 
-  return (
-    <div className="row u-full-width">
-      <h1>{props.username}</h1>
-    </div>
-  )
 
 }
