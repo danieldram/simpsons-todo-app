@@ -14,14 +14,13 @@ const InitialState = [
 
 const todo = (state=InitialState, {type, id, todo, status}) => {
 
-  //NOTE: deepFreeze ensures object is deeply immutable
+
   deepFreeze(state)
 
   switch(type){
     case ACT.REMOVE_TODO:
-      // const ns = UTILS.RemoveFromCollectionById(state, 'id', id)
-    return [  {id:1, todo: 'Take Lisa to the boring museum', status:'pending'},
-      {id:2, todo: 'Have a frosty Duff beer after work', status: 'complete'}]
+       const ns = UTILS.RemoveFromCollectionById(state, 'id', id)
+    return ns
 
     default:
     return state
