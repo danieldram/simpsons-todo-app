@@ -2,3 +2,7 @@ body {
   margin-top:50px;
   background-color:#eee;
 }
+
+h1{
+  font-weight:bold;
+}

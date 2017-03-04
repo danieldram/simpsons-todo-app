@@ -18,7 +18,7 @@
     "redux": "^3.6.0"
   },
   "scripts": {
-    "build-css": "node-sass src/scss/styles.scss -i -o src/css && cp -Ri src/css/styles.css public/styles.css",
+    "build-css": "node-sass src/scss/styles.scss -i -o src/css && cp -rf src/css/styles.css public/styles.css",
     "watch-css": "nodemon -e scss -x 'npm run build-css'",
     "start-react-app": "react-scripts start",
     "start": "npm run start-react-app",

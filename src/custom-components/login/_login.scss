@@ -1,6 +1,43 @@
 .login {
   margin-top:100px;
-  h1{
-    font-size:2em;
+  padding:0;
+
+  img {
+    max-width:100%;
   }
+
+  h1{
+    font-family:'Luckiest Guy', cursive;
+    font-size:3em;
+    padding:0;
+    margin:0;
+    color:#555;
+  }
+
+  p{
+    transition: all .25s;
+    font-family:'Luckiest Guy', cursive;
+    padding:5px 20px;
+    margin:0;
+    background-color:pink;
+    border-radius: 10px;
+  }
+
+  i{
+    padding:10px 0;
+    font-size:2em;
+    margin-left:-10px;
+  }
+  .login-image {
+    padding:0;
+    margin:0;
+
+  }
+
+  .login-message{
+    padding:0;
+    margin:0;
+  }
+
+
 }

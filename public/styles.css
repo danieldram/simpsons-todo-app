@@ -3,15 +3,58 @@
   top: 0;
   left: 0;
   z-index: 99;
+  height: 70px;
   width: 100%;
-  padding: 10px 5px;
-  background-color: #fff;
-  -webkit-box-shadow: 0px 10px 14px -4px #a1a1a1;
-  -moz-box-shadow: 0px 10px 14px -4px #a1a1a1;
-  box-shadow: 0px 10px 14px -4px #a1a1a1; }
+  padding: 0px 30px;
+  background-color: #fcd14e;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75); }
+  .app-header img {
+    width: 135px;
+    padding: 0;
+    margin: 0; }
   .app-header h1 {
     padding: 0;
     margin: 0;
-    font-size: 1.45em; }
+    font-size: 1.45em;
+    color: #444; }
+  .app-header .logo-box {
+    padding: 0;
+    margin: 0 20px; }
+  .app-header .homer {
+    margin-left: -30px; }
+  .app-header .the-simpsons {
+    margin-top: -10px; }
   .app-header .username {
-    background-color: blue; }
+    text-align: center;
+    padding: 10px; }
+
+.login {
+  margin-top: 100px;
+  padding: 0; }
+  .login img {
+    max-width: 100%; }
+  .login h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+    color: #555; }
+  .login p {
+    transition: all .25s;
+    font-family: 'Luckiest Guy', cursive;
+    padding: 5px 20px;
+    margin: 0;
+    background-color: pink;
+    border-radius: 10px; }
+  .login i {
+    padding: 10px 0;
+    font-size: 2em;
+    margin-left: -10px; }
+  .login .login-image {
+    padding: 0;
+    margin: 0; }
+  .login .login-message {
+    padding: 0;
+    margin: 0; }
