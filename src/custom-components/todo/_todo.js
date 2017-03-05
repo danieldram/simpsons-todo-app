@@ -9,14 +9,51 @@ import {DataTable} from '../../common-components/data-table'
 
 export class Todo extends Component {
 
+  state = {
+    inputValue:''
+  }
+
+  addTodo = () =>{
+    const inputValue = this.state.inputValue
+    !!inputValue &&  this.dispatchTodo(inputValue)
+  }
+
+  onChangeHandler = (evt) => this.setState({inputValue:evt.target.value})
+
   provideHeaders = () => Object.keys(TodoStore.getState()[0])
 
+  removeTodo = (id) => TodoStore.dispatch(A.REMOVE_TODO(id))
+
+  dispatchTodo = (todoname) => TodoStore.dispatch(A.ADD_TODO(todoname))
 
   render(){
     return (
       <div className="container todo-container">
+        <div className="twelve columns">
+          <DataTable
+            headers={this.provideHeaders()}
+            body={TodoStore.getState()}
+            removeDataItem={this.removeTodo}
+            />
 
-        <DataTable headers={this.provideHeaders()} body={TodoStore.getState()} />
+      </div>
+        <div className="twelve columns todo-ui-container">
+          <button> ADD TODO </button>
+          <button> GO TO MOES </button>
+
+          <div className="row add-todo-modal">
+            <div className="three columns">
+              <h1>TODO NAME</h1>
+            </div>
+            <div className="six columns">
+              <input type="text" className="u-full-width" onChange={this.onChangeHandler}></input>
+            </div>
+            <div className="three columns">
+              <button onClick={this.addTodo}>ADD</button>
+            </div>
+          </div>
+
+        </div>
 
       </div>
     )
