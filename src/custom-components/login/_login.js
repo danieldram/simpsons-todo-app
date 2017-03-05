@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { hashHistory } from 'react-router'
+
 import {TextInputWithError} from '../../common-components/text-input-with-error-message'
 
 import Homer from './billboard.png'
@@ -15,7 +17,9 @@ export class Login extends Component {
     if(key==='Enter'){
       helper.ValidateUsername(username).subscribe((bool)=>{
         (bool===true) ? UserStore.dispatch(A.USER_LOGIN(username)) : UserStore.dispatch(A.USER_LOGIN_ERROR())
+        hashHistory.push('/todo')
       })
+      evt.target.value = ''
     }
   }
 

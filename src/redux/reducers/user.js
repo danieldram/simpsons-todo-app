@@ -21,7 +21,6 @@ const user = (state=InitialState, {type, username}) => {
     case ACT.USER_LOGIN:
       return {username:username, isLoggedIn:true, error:false}
     case ACT.USER_LOGIN_ERROR:
-      console.log('in redux');
       return {username:'', isLoggedIn:false, error:true};
     default: return state
   }

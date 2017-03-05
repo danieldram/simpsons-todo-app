@@ -7,7 +7,6 @@ import { UserStore } from '../../redux'
 
 export const Header = (props) =>{
   const name = UserStore.getState().username
-  console.log('the name: ', name)
   const username = (name) ?  name : "Sign In"
 
   return (

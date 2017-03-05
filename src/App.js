@@ -5,7 +5,7 @@ import { Router, Route, hashHistory } from 'react-router'
 import './css/styles.css';
 
 import { TodoStore, UserStore } from './redux'
-import { Login } from './custom-components/login'
+import { Login, Todo } from './custom-components'
 
 class App extends Component {
 
@@ -28,14 +28,18 @@ class App extends Component {
       <Router history={ hashHistory} >
         {routes}
       </Router>
-    );
+    )
+
+
   }
 }
 
 
 const routes = (
-  <Route path="/" component={Login} > </Route>
-
+    <span>
+      <Route path="/" component={Login} > </Route>
+      <Route path="/todo" component={Todo} > </Route>
+    </span>
 )
 
 
