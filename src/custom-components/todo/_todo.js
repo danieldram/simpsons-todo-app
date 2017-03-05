@@ -16,14 +16,14 @@ export class Todo extends Component {
 
   addTodo = () =>{
     const inputValue = this.state.inputValue
-    !!inputValue &&  this.dispatchTodo(inputValue)
+    !!inputValue==true &&  this.dispatchTodo(inputValue) && this.setState({inputValue:false})
   }
 
   removeTodo = (id) => TodoStore.dispatch(A.REMOVE_TODO(id))
 
   completeTodo = (id) => TodoStore.dispatch(A.COMPLETE_TODO(id))
 
-  setModal = () =>  this.setState({addModal:true})
+  setModal = (bool) =>  this.setState({addModal:bool})
 
   onChangeHandler = (evt) => this.setState({inputValue:evt.target.value})
 
@@ -42,8 +42,9 @@ export class Todo extends Component {
       <div className="six columns">
         <input type="text" className="u-full-width" onChange={this.onChangeHandler} onBlur={this.onBlurHandler}></input>
       </div>
-      <div className="three columns">
+      <div className="five columns">
         <button onClick={this.addTodo}>ADD</button>
+        <button onClick={this.setModal.bind(null, false)}> CANCEL </button>
       </div>
     </div>
   )
@@ -70,13 +71,13 @@ export class Todo extends Component {
       <div className="container todo-container">
         <div className="twelve columns">
 
-          { (TodoStore.getState().length > 0 ) ? this.renderDataTable() : <span></span> }
+          { (TodoStore.getState().length > 0 ) ? this.renderDataTable() : this.renderDefaultMessage()}
 
         </div>
         <div className="twelve columns todo-ui-container">
-          <button onClick={this.setModal}> ADD TODO </button>
+          <button onClick={this.setModal.bind(null,true)}> ADD TODO </button>
           <button> GO TO MOES </button>
-          { (this.state.addModal) ? this.renderTodoModal() : this.renderDefaultMessage()}
+          { (this.state.addModal) ? this.renderTodoModal() : <span></span>}
         </div>
 
       </div>
@@ -84,16 +85,3 @@ export class Todo extends Component {
   }
 
 }
-
-
-const headers = [
-  'name',
-  'age',
-  'salary'
-]
-
-const body = [
-  {id:1, name:'tedd', age:53, salary:'5200'},
-  {id:2, name:'fred', age:13, salary:'10200'},
-  {id:3, name:'jamey', age:10, salary:'5600'},
-]

@@ -17,7 +17,7 @@ export const DataTable = (props) => (
     <thead>
       <tr>
         {props.headers.map( s => <th key={s}> {s} </th>)}
-        <th style={{textAlign:'center'}}>Actions</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
