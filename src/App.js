@@ -13,14 +13,11 @@ class App extends Component {
     console.log(evt)
   }
 
-
-  requireAuth = (nextState, replace) =>{
-    if( !this.isLoggedIn() ){
-      replace({
-        pathname:'/'
-      })
-    }
+  isLoggedIn(){
+    return (UserStore.getState().username) ? true : false
   }
+
+
 
 
   render() {
@@ -35,10 +32,18 @@ class App extends Component {
 }
 
 
+const requireAuth = (nextState, replace) =>{
+  if(!UserStore.getState().username ){
+    replace({
+      pathname:'/'
+    })
+  }
+}
+
 const routes = (
     <span>
       <Route path="/" component={Login} > </Route>
-      <Route path="/todo" component={Todo} > </Route>
+      <Route path="/todo" component={Todo} onEnter={requireAuth} > </Route>
     </span>
 )
 

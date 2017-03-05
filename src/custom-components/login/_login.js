@@ -43,7 +43,7 @@ export class Login extends Component {
               <div className="twelve columns">
                 <div className="tweleve columns">
                   <TextInputWithError
-                    placeholder="Enter your valid username and then order a 'TAB' "
+                    placeholder="Enter your valid username and then press Enter"
                     errorMessage={errorMessage}
                     onKeyPressHandler={this.onKeyPressHandler}
                     />

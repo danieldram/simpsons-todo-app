@@ -6,6 +6,7 @@
     "babel-jest": "^19.0.0",
     "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-polyfill": "^6.23.0",
+    "chakram": "^1.5.0",
     "node-sass": "^4.5.0",
     "react-scripts": "0.9.3"
   },
