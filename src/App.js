@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { Router, Route, Link, hashHistory } from 'react-router'
-//import { Home, About, Contact } from './custom-components/test'
+import { Router, Route, hashHistory } from 'react-router'
 
-import { Login } from './custom-components/'
 
 import './css/styles.css';
 
 import { TodoStore, UserStore } from './redux'
+import { Login } from './custom-components/login'
 
 class App extends Component {
 
-  login = (username) =>{
-    console.log(username)
+  onKeyPressHandler = (evt) =>{
+    console.log(evt)
   }
+
 
   isLoggedIn = () => {
     return UserStore.getState().isLoggedIn
@@ -30,11 +30,18 @@ class App extends Component {
   render() {
     return (
       <Router history={ hashHistory} >
-        <Route path="/" component={Login} gandler={this.login}></Route>
-
+        {routes}
       </Router>
     );
   }
 }
+
+
+const routes = (
+  <Route path="/" component={Login} > </Route>
+
+)
+
+
 
 export default App;

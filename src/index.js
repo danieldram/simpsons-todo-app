@@ -7,11 +7,11 @@ import App from './App.js'
 import './index.css';
 
 const components = [
-    {component: <Header username={UserStore.getState().username}/>, element:'app-header'},
-    {component: <App />, element:'root'}
+    {component: Header, element:'app-header'},
+    {component: App, element:'root'}
 ]
 
-const render = () => components.map((c)=> ReactDOM.render(c.component, document.getElementById(c.element)))
+const render = () => components.map(c => ReactDOM.render(React.createElement(c.component),document.getElementById(c.element)))
 
 
 render()

@@ -1,10 +1,14 @@
-import React, {propTypes, Component } from 'react'
+import React from 'react'
 
 import Homer from './homer-header.png'
 import Logo from './logo.png'
-export const Header = (props) =>{
 
-  const username = (props.username) ? props.username : "Sign In"
+import { UserStore } from '../../redux'
+
+export const Header = (props) =>{
+  const name = UserStore.getState().username
+  console.log('the name: ', name)
+  const username = (name) ?  name : "Sign In"
 
   return (
     <div className="row app-header">

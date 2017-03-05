@@ -1,7 +1,7 @@
 import {createStore} from 'redux'
 import deepFreeze from 'deep-freeze'
 
-import * as UTILS from '../../z_utils'
+
 import * as ACT from '../action-types'
 
 
@@ -18,8 +18,9 @@ const user = (state=InitialState, {type, username}) => {
 
   switch(type){
     case ACT.USER_LOGIN:
-       const ns = {username: username, isLoggedIn:true}
-    return ns
+        const ns = {username: username, isLoggedIn:true}
+        return ns
+
 
     default:
     return state
