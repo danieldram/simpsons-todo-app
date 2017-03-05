@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   z-index: 99;
+  position: fixed;
   height: 70px;
   width: 100%;
   padding: 0px 30px;
@@ -62,4 +63,17 @@
 .todo-container {
   margin-top: 50px; }
   .todo-container h1 {
-    font-size: 3em; }
+    font-size: 2em;
+    font-family: "Knewave", sans-serif;
+    color: #f6c945; }
+  .todo-container i {
+    padding: 10px;
+    font-size: 1.75em; }
+  .todo-container .todo-ui-container {
+    margin-top: 10px; }
+    .todo-container .todo-ui-container button {
+      margin: 5px 10px; }
+  .todo-container .add-todo-modal {
+    margin-top: 40px; }
+    .todo-container .add-todo-modal button {
+      margin: 0; }

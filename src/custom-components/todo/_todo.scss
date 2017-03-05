@@ -2,8 +2,30 @@
   margin-top:50px;
 
   h1{
-    font-size:3em;
+    font-size:2em;
+    font-family: "Knewave", sans-serif;
+    color: #f6c945;
+  }
+
+  i{
+    padding: 10px;
+    font-size:1.75em;
   }
 
 
+  .todo-ui-container{
+    margin-top:10px;
+    button{
+      margin: 5px 10px;
+    }
+
+  }
+
+  .add-todo-modal{
+    margin-top:40px;
+
+    button{
+      margin:0;
+    }
+  }
 }
