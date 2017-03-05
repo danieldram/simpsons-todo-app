@@ -8,7 +8,8 @@ import * as ACT from '../action-types'
 /* SET INITIAL STATE OF USER TODOS */
 const InitialState = {
   username:'',
-  isLoggedIn:false
+  isLoggedIn:false,
+  error:0
 }
 
 const user = (state=InitialState, {type, username}) => {
@@ -18,12 +19,11 @@ const user = (state=InitialState, {type, username}) => {
 
   switch(type){
     case ACT.USER_LOGIN:
-        const ns = {username: username, isLoggedIn:true}
-        return ns
-
-
-    default:
-    return state
+      return {username:username, isLoggedIn:true, error:false}
+    case ACT.USER_LOGIN_ERROR:
+      console.log('in redux');
+      return {username:'', isLoggedIn:false, error:true};
+    default: return state
   }
 
 

@@ -4,21 +4,20 @@ import {TextInputWithError} from '../../common-components/text-input-with-error-
 import Homer from './billboard.png'
 
 import { UserStore } from '../../redux'
-
 import * as A from '../../redux/actions/index.js'
+import * as helper from '../../z_helpers'
 
 export class Login extends Component {
 
-
-
-
   onKeyPressHandler = (evt) => {
     const key = evt.key
-    const value = evt.target.value
-    key==='Enter' &&  UserStore.dispatch(A.USER_LOGIN(value))
-
+    const username = evt.target.value
+    if(key==='Enter'){
+      helper.ValidateUsername(username).subscribe((bool)=>{
+        (bool===true) ? UserStore.dispatch(A.USER_LOGIN(username)) : UserStore.dispatch(A.USER_LOGIN_ERROR())
+      })
+    }
   }
-
 
   render(){
 
@@ -43,7 +42,6 @@ export class Login extends Component {
                     placeholder="Enter your valid username and then order a 'TAB' "
                     errorMessage={errorMessage}
                     onKeyPressHandler={this.onKeyPressHandler}
-
                     />
                 </div>
                 <div className="tweleve columns">

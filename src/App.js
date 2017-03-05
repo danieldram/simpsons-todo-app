@@ -14,10 +14,6 @@ class App extends Component {
   }
 
 
-  isLoggedIn = () => {
-    return UserStore.getState().isLoggedIn
-  }
-
   requireAuth = (nextState, replace) =>{
     if( !this.isLoggedIn() ){
       replace({

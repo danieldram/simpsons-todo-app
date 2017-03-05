@@ -1,7 +1,7 @@
 import {RemoveFromCollectionById} from './_collection.remove-by-id'
 import deepFreeze from 'deep-freeze'
 
-test('RemoveFromCollectionById: returns back a new copy of a collection excluding an object with specified key & id value', ()=>{
+test.skip('RemoveFromCollectionById: returns back a new copy of a collection excluding an object with specified key & id value', ()=>{
     const collection  = [{id:1}, {id:2}, {id:3}]
     deepFreeze(collection)
 
@@ -13,7 +13,7 @@ test('RemoveFromCollectionById: returns back a new copy of a collection excludin
 })
 
 
-test('RemoveFromCollectionById: fails gracefully when no params are provided', ()=>{
+test.skip('RemoveFromCollectionById: fails gracefully when no params are provided', ()=>{
     const collection  = [{id:1}, {id:2}, {id:3}]
     deepFreeze(collection)
 
