@@ -41,16 +41,15 @@ export class Login extends Component {
                 <h1>HOMER'S LIST OF IMPORANT TODOS APP</h1>
               </div>
               <div className="twelve columns">
-                <div className="tweleve columns">
+
+
                   <TextInputWithError
                     placeholder="Enter your valid username and then press Enter"
                     errorMessage={errorMessage}
                     onKeyPressHandler={this.onKeyPressHandler}
                     />
-                </div>
-                <div className="tweleve columns">
-                    <i className="fa fa-question-circle" aria-hidden="true"></i>
-                </div>
+
+        
               </div>
 
           </div>
