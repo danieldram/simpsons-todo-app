@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {TodoStore, UserStore} from './redux'
-import {Header} from './custom-components/header'
 import App from './App.js'
 
 import './index.css';
 
 const components = [
-    {component: Header, element:'app-header'},
     {component: App, element:'root'}
 ]
 

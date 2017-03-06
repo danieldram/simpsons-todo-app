@@ -104,12 +104,12 @@
     background-color: #fff;
     padding: 20px;
     border: 1px solid #777;
-    border-radius: 10px;
-    height: 250px; }
+    border-radius: 10px; }
     .todo-container .todo-ui-container button {
       margin: 5px 10px; }
   .todo-container .add-todo-modal {
-    margin-top: 40px; }
+    margin-top: 40px;
+    height: 160px; }
   .todo-container .default-message {
     transition: all .25s;
     background-color: #fff;
