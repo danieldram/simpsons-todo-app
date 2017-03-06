@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <span>
-        <Header></Header>
+        <Header back={()=>{hashHistory.push('/')}}></Header>
         <Router history={ hashHistory} >
           {routes}
         </Router>

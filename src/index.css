@@ -15,12 +15,3 @@ button {
 button:hover {
   background-color:#f6c945;
 }
-
-i{
-  cursor:pointer;
-  transition: all .25s
-}
-
-i:hover{
-  color:#f6c945;
-}

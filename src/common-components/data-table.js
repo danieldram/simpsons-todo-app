@@ -27,13 +27,8 @@ export const DataTable = (props) => (
             <tr key={o.id}>
               {createTableData(props.headers, o)}
               <td>
-                <div className="four columns">
                   <i className="fa fa-check-circle-o" aria-hidden="true" onClick={ ()=>{ props.completeDataItem(o.id)} } ></i>
-                </div>
-                <div className="four columns">
-                    <i className="fa fa-times" aria-hidden="true" onClick={ ()=>{props.removeDataItem(o.id)} } ></i>
-                </div>
-
+                  <i className="fa fa-times" aria-hidden="true" onClick={ ()=>{props.removeDataItem(o.id)} } ></i>
               </td>
             </tr>
           )

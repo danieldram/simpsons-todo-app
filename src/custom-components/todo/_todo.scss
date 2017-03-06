@@ -1,6 +1,21 @@
 .todo-container{
   margin-top:50px;
 
+  i{
+    cursor:pointer;
+    transition: all .25s
+  }
+
+  i:nth-of-type(1):hover{
+    transform:rotate(10deg);
+    color:#f6c945;
+  }
+
+  i:nth-of-type(2):hover{
+    transform:rotate(90deg);
+    color:#f6c945;
+  }
+
   h1{
     font-size:2em;
     font-family: "Knewave", sans-serif;

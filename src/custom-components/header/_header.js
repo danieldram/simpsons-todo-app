@@ -14,9 +14,9 @@ export const Header = (props) =>{
     <div className="row app-header">
       <div className="nine columns filler">
         <div className="two columns the-simpsons  logo-box">
-          <img src={Logo} />
+          <img src={Logo} onClick={props.back}/>
         </div>
-        <div className="two columns homer logo-box ">
+        <div className="two columns homer logo-box " onClick={props.back}>
           <img src={Homer} />
         </div>
       </div>
