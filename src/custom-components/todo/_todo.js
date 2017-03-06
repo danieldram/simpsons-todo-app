@@ -19,6 +19,8 @@ export class Todo extends Component {
 
   init(){
     const username = UserStore.getState().username
+    this.setState({username:username})
+
     const stream = helper.GetTodos(username)
     stream.subscribe((todos)=>{
       TodoStore.dispatch(A.INITIAL_TODOS(todos))
@@ -46,8 +48,10 @@ export class Todo extends Component {
 
 
   removeTodo = (id) => {
-
-    TodoStore.dispatch(A.REMOVE_TODO(id))
+    const stream = helper.DeleteTodo(this.state.username, id)
+    stream.subscribe(()=>{
+      TodoStore.dispatch(A.REMOVE_TODO(id))
+    })
 
   }
 
@@ -64,7 +68,7 @@ export class Todo extends Component {
 
     const todo = [...split1, update, ...split2]
 
-    const stream = helper.UpsertTodo(todo, this.state.username)
+    const stream = helper.UpsertTodo(update, this.state.username)
 
     const next = () => TodoStore.dispatch(A.COMPLETE_TODO(id))
 
