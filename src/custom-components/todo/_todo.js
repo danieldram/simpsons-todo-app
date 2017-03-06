@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 //import { browserHistory  } from 'react-router'
+import shortid from 'shortid'
 
-import { TodoStore } from '../../redux'
+import { UserStore, TodoStore } from '../../redux'
 import * as A from '../../redux/actions/index.js'
 import * as helper from '../../z_helpers'
 
@@ -16,7 +17,21 @@ export class Todo extends Component {
 
   addTodo = () =>{
     const inputValue = this.state.inputValue
-    !!inputValue==true &&  this.dispatchTodo(inputValue) && this.setState({inputValue:false})
+
+    if(!!inputValue){
+      const username = UserStore.getState().username
+      const todo = {id:shortid.generate(), todo:inputValue, status:'pending'}
+      const stream = helper.AddNewTodo(todo, username)
+      stream.subscribe(()=>{
+        this.dispatchTodo(todo)
+        this.setState({inputValue:false})
+      })
+
+    }
+
+
+
+
   }
 
   removeTodo = (id) => TodoStore.dispatch(A.REMOVE_TODO(id))
@@ -32,7 +47,7 @@ export class Todo extends Component {
   provideHeaders = () => Object.keys(TodoStore.getState()[0])
 
 
-  dispatchTodo = (todoname) => TodoStore.dispatch(A.ADD_TODO(todoname))
+  dispatchTodo = (todo) => TodoStore.dispatch(A.ADD_TODO(todo))
 
   renderTodoModal = () => (
     <div className="row add-todo-modal">
