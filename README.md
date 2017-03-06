@@ -19,6 +19,9 @@ Here is a link to my taiga.io project management dashboard where I broke down th
 git clone https://github.com/danieldram/simpsons-todo-app simpsons-todo-app
 cd simpsons-todo-app
 npm install
+cd server
+npm install
+cd ..
 docker-machine start default
 docker-machine env default
 [paste the docker-shell command output ]
