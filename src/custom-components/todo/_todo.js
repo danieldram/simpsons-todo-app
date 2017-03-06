@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { browserHistory  } from 'react-router'
+import deepFreeze from 'deep-freeze'
 import shortid from 'shortid'
 
 import { UserStore, TodoStore } from '../../redux'
@@ -11,24 +11,23 @@ import {DataTable} from '../../common-components/data-table'
 export class Todo extends Component {
 
   state = {
+    username:false,
     addModal:false,
     inputValue:''
-  }
-
-  constructor(){
-    super()
-    this.init()
   }
 
 
   init(){
     const username = UserStore.getState().username
     const stream = helper.GetTodos(username)
-
     stream.subscribe((todos)=>{
       TodoStore.dispatch(A.INITIAL_TODOS(todos))
     })
 
+  }
+
+  componentDidMount(){
+    this.init()
   }
 
 
@@ -36,24 +35,43 @@ export class Todo extends Component {
     const inputValue = this.state.inputValue
 
     if(!!inputValue){
-      const username = UserStore.getState().username
       const todo = {id:shortid.generate(), todo:inputValue, status:'pending'}
-      const stream = helper.AddNewTodo(todo, username)
+      const stream = helper.UpsertTodo(todo, this.state.username)
       stream.subscribe(()=>{
         this.dispatchTodo(todo)
         this.setState({inputValue:false})
       })
-
     }
+  }
 
 
+  removeTodo = (id) => {
 
+    TodoStore.dispatch(A.REMOVE_TODO(id))
 
   }
 
-  removeTodo = (id) => TodoStore.dispatch(A.REMOVE_TODO(id))
+  completeTodo = (id) => {
+    const state = TodoStore.getState()
+    deepFreeze(state)
 
-  completeTodo = (id) => TodoStore.dispatch(A.COMPLETE_TODO(id))
+    const filtered = state.filter(o => o.id!=id)
+    const index = state.map((o, i) => (o.id==id) ? i: null).filter(i => !!i).reduce((a,b)=>a+b, 0)
+    const update = Object.assign({}, state.filter(o => o.id==id).reduce((a,b)=>b, 0))
+    update.status = 'complete'
+    const split1 = state.slice(0,index)
+    const split2 = state.slice(index+1)
+
+    const todo = [...split1, update, ...split2]
+
+    const stream = helper.UpsertTodo(todo, this.state.username)
+
+    const next = () => TodoStore.dispatch(A.COMPLETE_TODO(id))
+
+    stream.subscribe(next)
+
+
+  }
 
   setModal = (bool) =>  this.setState({addModal:bool})
 
