@@ -14,19 +14,9 @@ router.get('/static/:dir/:filename', (req, res)=>{
 })
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' })
+  res.render('index')
 });
 
-router.post('/upload/song', (req, res)=>{
-  var data = req.body
-  var result_data = null;
-  console.log('the data:', data)
-  var stream = SongMetaDataDB.upsert({song_id:req.body.song_id}, req.body)
-  stream.subscribe((result)=>{
-    result_data = result;
-    res.json({data:result_data});
-  })
 
-})
 
 module.exports = router;

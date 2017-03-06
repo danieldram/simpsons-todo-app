@@ -26,7 +26,10 @@
     "watch-css": "nodemon -e scss -x 'npm run build-css'",
     "start-react-app": "react-scripts start",
     "start": "npm run start-react-app",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run move-assets && npm run move-favicon && npm run move-index",
+    "move-assets": "mv -f build/static/** server/public && mv -f build/styles.css server/public/css/styles.css",
+    "move-favicon": " mv -f build/favicon.ico server/public/favicon.ico ",
+    "move-index": "mv -f build/index.html server/views/index.ejs",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
