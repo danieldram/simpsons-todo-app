@@ -3,13 +3,10 @@ var expect = chakram.expect
 
 describe("GET: /todo/get/:username", function() {
     it("returns back todos made by that use", function () {
-      var form = {
-        email:"danieldram@gmail.com",
-        password:'qazwsxedcrfv!'
-      }
 
-      return chakram.get("http://localhost:3005/todo/get/homersimpson").then(response =>{
-    
+
+      return chakram.get("http://localhost:3003/todo/get/Leanne%20Graham").then(response =>{
+
         let body = response.body
         expect(body.success).to.be.true
         expect(body.data).to.be.an('array')

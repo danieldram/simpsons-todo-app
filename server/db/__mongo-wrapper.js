@@ -31,6 +31,24 @@ class MongoWrapper{
     return source;
   }
 
+
+  delete(doc, collection){
+    var source = Observable.create((observer)=>{
+      var db = this.db.collection(collection)
+
+       db.deleteOne(doc, (err, resp)=>{
+         if(!err && !!resp.result.ok) {
+           observer.next(resp)
+           observer.complete()
+         }else{
+           console.log(err)
+           observer.error(err)
+         }
+       })
+    });
+    return source;
+  }
+
   find(doc, collection){
     var source = Observable.create((observer)=>{
       var db = this.db.collection(collection);
