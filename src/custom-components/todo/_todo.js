@@ -30,6 +30,7 @@ export class Todo extends Component {
   init(){
     const username = UserStore.getState().username
     this.setState({username:username})
+    SfxStore.dispatch(A.SFX_STOP())
 
     const stream = helper.GetTodos(username)
     stream.subscribe((todos)=>{
@@ -81,7 +82,7 @@ export class Todo extends Component {
 
     const stream = helper.UpsertTodo(update, this.state.username)
 
-    const next = () => TodoStore.dispatch(A.COMPLETE_TODO(id)) && SfxStore.dispatch(A.SFX_WOHOO())
+    const next = () => TodoStore.dispatch(A.COMPLETE_TODO(id))  && SfxStore.dispatch(A.SFX_WOHOO())
 
     stream.subscribe(next)
 
@@ -125,10 +126,12 @@ export class Todo extends Component {
 
 
     renderDefaultMessage = () => (
+
       <div className="default-message twelve columns">
           <h1>There are no todos! <br/> Woohoo!</h1>
       </div>
     )
+
 
 
   render(){

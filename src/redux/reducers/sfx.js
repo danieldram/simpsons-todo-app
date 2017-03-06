@@ -11,7 +11,7 @@ wavesurfer.on('ready', ()=>{
 
 import doh from '../../audio/doh-1.wav'
 import wohoo from '../../audio/wohoo-1.wav'
-import opening from '../../audio/opening.mp3'
+import open from '../../audio/open.wav'
 
 
 
@@ -38,8 +38,14 @@ const sfx = (state=InitialState, {type}) => {
 
     case ACT.SFX_OPENING:
       wavesurfer.empty()
-      wavesurfer.setVolume(.4)
-      wavesurfer.load(opening)
+      wavesurfer.setVolume(.5)
+      wavesurfer.load(open)
+      return state
+
+
+    case ACT.SFX_STOP:
+      wavesurfer.stop()
+      wavesurfer.empty()
       return state
 
     default:

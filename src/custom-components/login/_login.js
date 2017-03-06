@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { hashHistory } from 'react-router'
 
 import {TextInputWithError} from '../../common-components/text-input-with-error-message'
+import {Notes} from  './_notes'
+
 
 import Homer from './billboard.png'
 
@@ -31,7 +33,6 @@ export class Login extends Component {
       <div className="login container">
 
         <div className="row">
-
           <div className="five columns login-image">
             <img src={Homer}></img>
           </div>
@@ -42,17 +43,15 @@ export class Login extends Component {
               </div>
               <div className="twelve columns">
 
-
                   <TextInputWithError
                     placeholder="Enter your valid username and then press Enter"
                     errorMessage={errorMessage}
                     onKeyPressHandler={this.onKeyPressHandler}
                     />
 
-
               </div>
-
           </div>
+          <Notes />
 
         </div>
       </div>
