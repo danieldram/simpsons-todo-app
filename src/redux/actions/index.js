@@ -11,3 +11,9 @@ export const INITIAL_TODOS = (todos) => ({type:ACT.INITIAL_TODOS, todo:todos})
 
 export const USER_LOGIN = (username) => ( {type: ACT.USER_LOGIN, username} )
 export const USER_LOGIN_ERROR = (bool) => ( {type: ACT.USER_LOGIN_ERROR, bool} )
+
+
+export const SFX_DOH = () => ({type: ACT.SFX_DOH})
+export const SFX_WOHOO = () => ({type: ACT.SFX_WOHOO})
+export const SFX_OPENING = ()=> ({type: ACT.SFX_OPENING})
+export const SFX_STOP = () => ({type: ACT.SFX_STOP})

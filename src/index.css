@@ -15,3 +15,7 @@ button {
 button:hover {
   background-color:#f6c945;
 }
+
+#wavesurfer {
+  visibility: hidden;
+}

@@ -4,7 +4,8 @@ import { Router, Route, hashHistory } from 'react-router'
 
 import './css/styles.css';
 
-import { TodoStore, UserStore } from './redux'
+import { TodoStore, UserStore, SfxStore } from './redux'
+import * as A from './redux/actions'
 import { Login, Todo, Header } from './custom-components'
 
 class App extends Component {
@@ -17,6 +18,9 @@ class App extends Component {
     return (UserStore.getState().username) ? true : false
   }
 
+  componentDidMount(){
+    SfxStore.dispatch(A.SFX_OPENING())
+  }
 
   render() {
     return (
