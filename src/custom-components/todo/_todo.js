@@ -144,7 +144,6 @@ export class Todo extends Component {
         </div>
         <div className="twelve columns todo-ui-container">
           <button onClick={this.setModal.bind(null,true)}> ADD TODO </button>
-          <button> GO TO MOES </button>
           { (this.state.addModal) ? this.renderTodoModal() : <span></span>}
         </div>
 
