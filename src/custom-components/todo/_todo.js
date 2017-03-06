@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import deepFreeze from 'deep-freeze'
 import shortid from 'shortid'
 
-import { UserStore, TodoStore } from '../../redux'
+
+
+
+import { UserStore, TodoStore, SfxStore } from '../../redux'
 import * as A from '../../redux/actions/index.js'
 import * as helper from '../../z_helpers'
 
@@ -10,6 +13,10 @@ import {DataTable} from '../../common-components/data-table'
 
 import NoTodoHomer from './no-todos.png'
 import AngryHomer from './add-todo.png'
+
+
+
+
 
 export class Todo extends Component {
 
@@ -38,6 +45,7 @@ export class Todo extends Component {
 
   addTodo = () =>{
     const inputValue = this.state.inputValue
+
 
     if(!!inputValue){
       const todo = {id:shortid.generate(), todo:inputValue, status:'pending'}
@@ -73,7 +81,7 @@ export class Todo extends Component {
 
     const stream = helper.UpsertTodo(update, this.state.username)
 
-    const next = () => TodoStore.dispatch(A.COMPLETE_TODO(id))
+    const next = () => TodoStore.dispatch(A.COMPLETE_TODO(id)) && SfxStore.dispatch(A.SFX_WOHOO())
 
     stream.subscribe(next)
 
@@ -89,7 +97,7 @@ export class Todo extends Component {
   provideHeaders = () => Object.keys(TodoStore.getState()[0])
 
 
-  dispatchTodo = (todo) => TodoStore.dispatch(A.ADD_TODO(todo))
+  dispatchTodo = (todo) => TodoStore.dispatch(A.ADD_TODO(todo)) && SfxStore.dispatch(A.SFX_DOH())
 
   renderTodoModal = () => (
     <div className="row add-todo-modal">
