@@ -1,6 +1,8 @@
-## WOOHOO! Welcome to the Simpsons Todo Application
-![screnshot](https://github.com/danieldram/simpsons-todo-app/blob/master/screenshot.png?raw=true)
+## WOOHOO! Welcome to the Simpsons Todo Application w/React + Redux....
 This my example project showcasing my React + Redux + React-Router + NodeJS + MongoDB integration and deployment via Docker.
+Note: There is no authentications, passwords or security preventative measures, it's a todo app!
+
+![screnshot](https://github.com/danieldram/simpsons-todo-app/blob/master/screenshot.png?raw=true)
 
 ## Best Way To Run The Project: USE DOCKER
 - Install the latest version of docker & virtualbox and start a 'default' machine using ubuntu as your OS.  
