@@ -26,6 +26,9 @@ router.get('/get/:username', (req, res)=>{
   const stream = todos_db.find({username:username})
 
   const next = (resp) => result=resp
+                          .map(o=>{delete o._id; return o})
+                          .map(o=> {delete o.username; return o})
+                          
   const err = (err) => res.json(err)
   const complete = () => {
     console.log(result)

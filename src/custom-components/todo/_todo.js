@@ -15,6 +15,23 @@ export class Todo extends Component {
     inputValue:''
   }
 
+  constructor(){
+    super()
+    this.init()
+  }
+
+
+  init(){
+    const username = UserStore.getState().username
+    const stream = helper.GetTodos(username)
+
+    stream.subscribe((todos)=>{
+      TodoStore.dispatch(A.INITIAL_TODOS(todos))
+    })
+
+  }
+
+
   addTodo = () =>{
     const inputValue = this.state.inputValue
 

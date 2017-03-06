@@ -6,19 +6,17 @@ import * as UTILS from '../../z_utils'
 import * as ACT from '../action-types'
 
 
-/* SET INITIAL STATE OF HOMER'S TODOS */
-const InitialState = [
-  // {id:shortid.generate(), todo: 'Pick up Bart', status:'pending'},
-  // {id:shortid.generate(), todo: 'Take Lisa to the boring museum', status:'pending'},
-  // {id:shortid.generate(), todo: 'Have a frosty Duff beer after work', status: 'complete'}
-]
+/* SET INITIAL STATE OF TODOS */
+const InitialState = []
 
 const todo = (state=InitialState, {type, todo}) => {
 
-//UTILS.RemoveFromCollectionById(state, 'id', todo.id)
   deepFreeze(state)
 
   switch(type){
+    case ACT.ADD_TODO:
+      return state.concat(todo)
+
     case ACT.REMOVE_TODO:
       return state.filter(o => o.id!=todo.id)
 
@@ -32,8 +30,8 @@ const todo = (state=InitialState, {type, todo}) => {
 
       return [...split1, update, ...split2]
 
-    case ACT.ADD_TODO:
-      return state.concat(todo)
+    case ACT.INITIAL_TODOS:
+      return todo
 
     default: return state
   }
