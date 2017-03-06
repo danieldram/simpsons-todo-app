@@ -4,6 +4,10 @@ Note: There is no authentications, passwords or security preventative measures, 
 
 ![screnshot](https://github.com/danieldram/simpsons-todo-app/blob/master/screenshot.png?raw=true)
 
+## See how the project was broken down
+Here is a link to my taiga.io project management dashboard where I broke down the requirements similar to how I would have done in other apps like Jira etc.
+[ Taiga Project Sprint Breakdown ](https://tree.taiga.io/project/danieldram-dnn-todo-app/kanban?kanban-status=1074238)
+
 ## Best Way To Run The Project: USE DOCKER
 - Install the latest version of docker & virtualbox and start a 'default' machine using ubuntu as your OS.  
 - Install docker-compose
