@@ -1,5 +1,5 @@
 ## WOOHOO! Welcome to the Simpsons Todo Application
-
+![screnshot](https://github.com/danieldram/simpsons-todo-app/blob/master/screenshot.png?raw=true)
 This my example project showcasing my React + Redux + React-Router + NodeJS + MongoDB integration and deployment via Docker.
 
 ## Best Way To Run The Project: USE DOCKER
