@@ -12,15 +12,28 @@
   -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75); }
   .app-header img {
-    width: 135px;
+    cursor: pointer;
+    transition: all .25s;
+    width: 138px;
     padding: 0;
     margin: 0; }
+  .app-header .the-simpsons img:hover {
+    margin-top: -5px;
+    margin-left: 20px;
+    width: 150px; }
+  .app-header .homer img:hover {
+    margin-top: -5px;
+    margin-left: -20px;
+    width: 150px; }
   .app-header h1 {
+    font-family: 'Knewave', cursive;
+    font-size: 2.25em;
     padding: 0;
-    margin: 0;
+    margin: 10px 0 0 0;
     font-size: 1.45em;
     color: #444; }
   .app-header .logo-box {
+    transition: all .25s;
     padding: 0;
     margin: 0 20px; }
   .app-header .homer {
@@ -35,7 +48,12 @@
   margin-top: 100px;
   padding: 0; }
   .login img {
-    max-width: 100%; }
+    cursor: pointer;
+    transition: width .25s;
+    max-width: 150%;
+    width: 110%; }
+  .login img:hover {
+    width: 115%; }
   .login h1 {
     font-family: 'Luckiest Guy', cursive;
     font-size: 3em;
@@ -59,9 +77,31 @@
   .login .login-message {
     padding: 0;
     margin: 0; }
+  .login .login-form {
+    margin-top: 25px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #777;
+    border-radius: 10px; }
+  .login .notes-container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px; }
+    .login .notes-container p {
+      background-color: #fff;
+      font-family: sans-serif; }
 
 .todo-container {
   margin-top: 50px; }
+  .todo-container i {
+    cursor: pointer;
+    transition: all .25s; }
+  .todo-container i:nth-of-type(1):hover {
+    transform: rotate(10deg);
+    color: #f6c945; }
+  .todo-container i:nth-of-type(2):hover {
+    transform: rotate(90deg);
+    color: #f6c945; }
   .todo-container h1 {
     font-size: 2em;
     font-family: "Knewave", sans-serif;
@@ -69,9 +109,49 @@
   .todo-container i {
     padding: 10px;
     font-size: 1.75em; }
+  .todo-container img {
+    transition: all .25s;
+    max-width: 110%;
+    width: 100%; }
+  .todo-container img:hover {
+    margin-top: -20px;
+    width: 110%; }
   .todo-container .todo-ui-container {
-    margin-top: 10px; }
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #777;
+    border-radius: 10px; }
     .todo-container .todo-ui-container button {
       margin: 5px 10px; }
   .todo-container .add-todo-modal {
-    margin-top: 40px; }
+    margin-top: 40px;
+    height: 160px; }
+  .todo-container .default-message {
+    transition: all .25s;
+    background-color: #fff;
+    transition: all, .25s;
+    text-align: center;
+    padding: 20px 0;
+    height: 300px;
+    border-radius: 10px; }
+    .todo-container .default-message h1 {
+      animation: pulsingText 5s infinite;
+      -webkit-animation: pulsingText 5s infinite;
+      color: #444;
+      font-size: 5em; }
+    .todo-container .default-message h1:hover {
+      font-size: 5.5em; }
+  .todo-container .todo-table {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #777;
+    border-radius: 10px; }
+
+@keyframes pulsingText {
+  0% {
+    font-size: 5em; }
+  50% {
+    font-size: 5.1em; }
+  100% {
+    font-size: 5em; } }

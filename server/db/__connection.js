@@ -1,6 +1,6 @@
 // Connection URL
 require('dotenv').load()
-var url = (process.env.dev==='true') ? 'mongodb://192.168.99.1:3001/test' : 'mongodb://192.168.99.1:3001/test';
+var url = process.env.mongodb
 
 
 //Connect to MongoDB

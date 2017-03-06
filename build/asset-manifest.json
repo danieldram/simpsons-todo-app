@@ -1,9 +1,13 @@
 {
-  "main.css": "static/css/main.8af0d484.css",
-  "main.css.map": "static/css/main.8af0d484.css.map",
-  "main.js": "static/js/main.484f08eb.js",
-  "main.js.map": "static/js/main.484f08eb.js.map",
+  "main.css": "static/css/main.c16f6a3c.css",
+  "main.css.map": "static/css/main.c16f6a3c.css.map",
+  "main.js": "static/js/main.4397e90e.js",
+  "main.js.map": "static/js/main.4397e90e.js.map",
+  "static/media/add-todo.png": "static/media/add-todo.b8ee4199.png",
   "static/media/billboard.png": "static/media/billboard.92c76922.png",
   "static/media/homer-header.png": "static/media/homer-header.f16be713.png",
-  "static/media/logo.png": "static/media/logo.2456dd52.png"
+  "static/media/logo.png": "static/media/logo.2456dd52.png",
+  "static/media/no-todos.png": "static/media/no-todos.2d5ca97f.png",
+  "static/media/open.wav": "static/media/open.d56303da.wav",
+  "static/media/wohoo-1.wav": "static/media/wohoo-1.a228e7d9.wav"
 }
