@@ -3,7 +3,14 @@
   padding:0;
 
   img {
-    max-width:100%;
+    cursor:pointer;
+    transition:width .25s;
+    max-width:150%;
+    width:110%;
+  }
+
+  img:hover{
+    width:115%;
   }
 
   h1{
@@ -38,6 +45,14 @@
     padding:0;
     margin:0;
   }
-  
+
+  .login-form {
+    margin-top:25px;
+    background-color:#fff;
+    padding:20px;
+    border:1px solid #777;
+    border-radius:10px;
+  }
+
 
 }

@@ -8,6 +8,9 @@ import * as helper from '../../z_helpers'
 
 import {DataTable} from '../../common-components/data-table'
 
+import NoTodoHomer from './no-todos.png'
+import AngryHomer from './add-todo.png'
+
 export class Todo extends Component {
 
   state = {
@@ -91,7 +94,7 @@ export class Todo extends Component {
   renderTodoModal = () => (
     <div className="row add-todo-modal">
       <div className="three columns">
-        <h1>TODO NAME</h1>
+        <img src={AngryHomer} />
       </div>
       <div className="six columns">
         <input type="text" className="u-full-width" onChange={this.onChangeHandler} onBlur={this.onBlurHandler}></input>
@@ -115,7 +118,7 @@ export class Todo extends Component {
 
     renderDefaultMessage = () => (
       <div className="default-message twelve columns">
-          <h1>There are no todos! Please add one!</h1>
+          <h1>There are no todos! <br/> Woohoo!</h1>
       </div>
     )
 
@@ -123,7 +126,7 @@ export class Todo extends Component {
   render(){
     return (
       <div className="container todo-container">
-        <div className="twelve columns">
+        <div className="twelve todo-table columns">
 
           { (TodoStore.getState().length > 0 ) ? this.renderDataTable() : this.renderDefaultMessage()}
 

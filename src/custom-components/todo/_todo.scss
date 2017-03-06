@@ -12,9 +12,25 @@
     font-size:1.75em;
   }
 
+  img{
+    transition:all .25s;
+    max-width:110%;
+    width:100%
+  }
+
+  img:hover{
+    margin-top:-20px;
+    width:110%;
+  }
 
   .todo-ui-container{
     margin-top:10px;
+    background-color:#fff;
+    padding:20px;
+    border:1px solid #777;
+    border-radius:10px;
+    height:250px;
+
     button{
       margin: 5px 10px;
     }
@@ -23,9 +39,43 @@
 
   .add-todo-modal{
     margin-top:40px;
+  }
 
-    button{
-    
+  .default-message {
+    transition:all .25s;
+    background-color:#fff;
+    transition:all, .25s;
+    text-align:center;
+    padding: 20px 0;
+    height:300px;
+    border-radius:10px;
+
+    h1{
+      animation: pulsingText 5s infinite;
+      -webkit-animation: pulsingText 5s infinite;
+      color:#444;
+      font-size:5em;
+    }
+
+    h1:hover{
+      font-size:5.5em
     }
   }
+
+
+  .todo-table {
+    padding:20px;
+    background-color:#fff;
+    border: 1px solid #777;
+    border-radius:10px;
+  }
+
+}
+
+
+
+@keyframes pulsingText {
+    0% {font-size:5em}
+    50% {font-size:5.1em}
+    100% {font-size:5em}
 }

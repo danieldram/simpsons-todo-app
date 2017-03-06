@@ -18,20 +18,41 @@
 
 
   img{
-    width:135px;
+    transition:all .25s;
+    width:138px;
     padding:0;
     margin:0;
   }
 
+  .the-simpsons{
+    img:hover{
+      margin-top:-5px;
+      margin-left:20px;
+      width:150px;
+    }
+  }
+
+  .homer {
+    img:hover{
+      margin-top:-5px;
+      margin-left:-20px;
+      width:150px;
+    }
+  }
+
+
   h1{
+    font-family:'Knewave', cursive;
+    font-size:2.25em;
     padding:0;
-    margin:0;
+    margin:10px 0 0 0;
     font-size:1.45em;
     color:#444;
   }
 
 
   .logo-box{
+    transition:all .25s;
     padding:0;
     margin: 0 20px;
   }
