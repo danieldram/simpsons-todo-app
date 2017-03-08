@@ -10,12 +10,10 @@ import { Login, Todo, Header } from './custom-components'
 
 class App extends Component {
 
-  onKeyPressHandler = (evt) =>{
-    console.log(evt)
-  }
 
-  isLoggedIn(){
-    return (UserStore.getState().username) ? true : false
+  goToLogin = () => {
+    hashHistory.push('/')
+    UserStore.dispatch(A.USER_LOGOUT())
   }
 
   componentDidMount(){
@@ -25,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <span>
-        <Header back={()=>{hashHistory.push('/')}}></Header>
+        <Header back={this.goToLogin}></Header>
         <Router history={ hashHistory} >
           {routes}
         </Router>

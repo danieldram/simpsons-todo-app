@@ -95,7 +95,7 @@ export class Todo extends Component {
 
   onBlurHandler = (evt) => evt.target.value = ''
 
-  provideHeaders = () => Object.keys(TodoStore.getState()[0])
+  provideHeaders = () => Object.keys(TodoStore.getState()[0]).filter(key => key!=='id')
 
 
   dispatchTodo = (todo) => TodoStore.dispatch(A.ADD_TODO(todo)) && SfxStore.dispatch(A.SFX_DOH())
